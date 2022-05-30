@@ -20,5 +20,6 @@
       "username": "postgres",
       "password": "postgres"
     }
-  ]
+  ],
+  "editor.formatOnSave": true
 }
