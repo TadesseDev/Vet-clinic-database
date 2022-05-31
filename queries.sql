@@ -57,3 +57,16 @@ ROLLBACK TRANSACTION;
 SELECT *
 FROM animals;
 --3 Transaction with a save point.
+BEGIN TRANSACTION;
+DELETE FROM animals
+where date_of_birth = '2021/1/1';
+SAVEPOINT delete_january_2021;
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+ROLLBACK TO SAVEPOINT delete_january_2021;
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+COMMIT TRANSACTION;
+select *
+from animals;
