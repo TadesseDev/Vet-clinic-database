@@ -50,3 +50,10 @@ WHERE species IS NULL;
 COMMIT TRANSACTION;
 select *
 from animals;
+--3 Delete and rollback transaction.
+BEGIN TRANSACTION;
+DELETE FROM animals;
+ROLLBACK TRANSACTION;
+SELECT *
+FROM animals;
+--3 Transaction with a save point.
