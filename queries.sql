@@ -39,3 +39,30 @@ WHERE weight_kg < 0;
 COMMIT TRANSACTION;
 select *
 from animals;
+--4 Transaction with a save point.
+select COUNT(*)
+from animals;
+--
+select COUNT(*)
+from animals
+where escape_attempts = 0;
+--
+select AVG(weight_kg)
+from animals;
+--
+SELECT neutered,
+  SUM(escape_attempts) as escaped
+FROM animals
+GROUP BY neutered;
+--
+SELECT species,
+  min(weight_kg),
+  max(weight_kg)
+FROM animals
+GROUP BY species;
+--
+SELECT species,
+  AVG(escape_attempts)
+FROM animals
+WHERE date_of_birth BETWEEN '1990/1/1' and '2000/1/1'
+GROUP BY species;
