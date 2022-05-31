@@ -29,3 +29,14 @@ WHERE weight_kg BETWEEN 10.4 AND 17.3;
 select 'Agumon' like '%mon';
 select *
 from animals;
+-- Vet clinic database: query and update animals table
+--1 update and rollback species column.
+BEGIN TRANSACTION;
+UPDATE animals
+set species = 'unspecified';
+select *
+from animals;
+ROLLBACK TRANSACTION;
+SELECT *
+FROM animals;
+--2 update and commit species column.
