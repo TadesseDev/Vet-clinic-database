@@ -2,10 +2,10 @@
 
 > a relational database to create the data structure for a vet clinic. I will start with one table, and step by step, I will create a complete database with data about:
 
-> - animals
-> - animals' owners
-> - clinic employees
-> - visit
+> - animals.
+> - animals' owners.
+> - clinic employees.
+> - visit.
 
 ## Built With
 
